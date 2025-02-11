@@ -4,3 +4,7 @@
 
 /* Components folder */
 @import './components/tailwindBase.css';
+
+body {
+  @apply font-roboto font-regular bg-ocean text-gray;
+}

@@ -12,5 +12,6 @@
   "endOfLine": "lf",
   "arrowParens": "always",
   "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["cn"],
   "organizeImportsSkipDestructiveCodeActions": true
 }
