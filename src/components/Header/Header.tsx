@@ -12,8 +12,15 @@ const Header = ({ children, className, ...props }: IHeaderProps) => {
   );
 };
 
-const Item = ({ children, className }: ITitleProps) => {
-  return <div className={cn('text-center text-xl font-bold', className)}>{children}</div>;
+const Item = ({ children, className, ...props }: ITitleProps) => {
+  return (
+    <div
+      {...props}
+      className={cn('text-center text-xl font-bold', className)}
+    >
+      {children}
+    </div>
+  );
 };
 
 Header.Item = Item;

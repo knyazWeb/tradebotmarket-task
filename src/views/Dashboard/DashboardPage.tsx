@@ -1,11 +1,19 @@
-import { Header, Navigation, navigationMockData } from '@/components';
+import {
+  Header,
+  mockRanges,
+  Navigation,
+  navigationMockData,
+  TimeRange,
+} from '@/components';
 import { AlignJustify, RefreshCw } from 'lucide-react';
+import { useState } from 'react';
 
 const DashboardPage = () => {
+  const [active, setActive] = useState<string>(mockRanges[0]);
   return (
-    <main className='relative'>
+    <main className='relative overflow-hidden'>
       {/* Header */}
-      <Header>
+      <Header className='container'>
         <Header.Item>
           <AlignJustify className='h-7 w-7 cursor-pointer text-gray' />
         </Header.Item>
@@ -16,8 +24,18 @@ const DashboardPage = () => {
       </Header>
       {/* End Header */}
 
+      {/* TODO: ВЫНЕСТИ ЛОГИКУ В КОМПОНЕНТ ОБËРТКУ */}
+      {/* Time Range */}
+      <TimeRange
+        className='container'
+        activeRange={active}
+        onRangeChangeHandler={(range) => setActive(range)}
+        rangesList={mockRanges}
+      />
+      {/* End Time Range */}
+
       {/* Navigation */}
-      <Navigation className='fixed bottom-0 left-0'>
+      <Navigation className='fixed bottom-0 left-0 h-[60px]'>
         {navigationMockData.map((item) => (
           <Navigation.Item
             itemName={item.itemName}

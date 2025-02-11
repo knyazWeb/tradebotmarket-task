@@ -6,5 +6,9 @@
 @import './components/tailwindBase.css';
 
 body {
-  @apply font-roboto font-regular bg-ocean text-gray;
+  @apply bg-ocean font-roboto font-regular text-gray;
+}
+
+.container {
+  @apply mx-auto px-3;
 }
