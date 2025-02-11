@@ -4,6 +4,7 @@ import {
   Navigation,
   navigationMockData,
   TimeRange,
+  TradingInfo,
 } from '@/components';
 import { AlignJustify, RefreshCw } from 'lucide-react';
 import { useState } from 'react';
@@ -11,9 +12,9 @@ import { useState } from 'react';
 const DashboardPage = () => {
   const [active, setActive] = useState<string>(mockRanges[0]);
   return (
-    <main className='relative overflow-hidden'>
+    <main className='relative'>
       {/* Header */}
-      <Header className='container'>
+      <Header className='wrapper'>
         <Header.Item>
           <AlignJustify className='h-7 w-7 cursor-pointer text-gray' />
         </Header.Item>
@@ -24,10 +25,20 @@ const DashboardPage = () => {
       </Header>
       {/* End Header */}
 
+      {/* Trading Info */}
+      <TradingInfo
+        className='wrapper'
+        balance={10850}
+        onHold={24000}
+        capital={1.00865}
+        currency='BTC'
+      />
+      {/* End Trading Info */}
+
       {/* TODO: ВЫНЕСТИ ЛОГИКУ В КОМПОНЕНТ ОБËРТКУ */}
       {/* Time Range */}
       <TimeRange
-        className='container'
+        className='wrapper'
         activeRange={active}
         onRangeChangeHandler={(range) => setActive(range)}
         rangesList={mockRanges}

@@ -3,3 +3,4 @@ export { Navigation } from './Navigation/Navigation';
 export { navigationMockData } from './Navigation/NavigationMockData';
 export { TimeRange } from './TimeRange/TimeRange';
 export { mockRanges } from './TimeRange/TimeRangeMockData';
+export { TradingInfo } from './TradingInfo/TradingInfo';

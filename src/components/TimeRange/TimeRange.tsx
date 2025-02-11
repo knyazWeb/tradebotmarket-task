@@ -8,8 +8,10 @@ const TimeRange = ({
   className,
 }: ITimeRangeProps) => {
   return (
-    <section className={cn('flex items-center justify-between gap-1.5 w-full', className)}>
-      <span className='text-xs text-nowrap'>Time Range:</span>
+    <section
+      className={cn('flex w-full items-center justify-between gap-1.5', className)}
+    >
+      <span className='text-nowrap text-xs'>{`Time Range:`}</span>
 
       {/* Range Elements */}
       {rangesList.map((range) => {
@@ -18,7 +20,7 @@ const TimeRange = ({
           <button
             onClick={() => onRangeChangeHandler(range)}
             className={cn(
-              'flex w-full min-w-[50px] items-center justify-center rounded-full border border-gray p-1 text-gray transition-all duration-200 ease-in-out text-xs',
+              'xs:w-full flex w-fit min-w-[50px] items-center justify-center rounded-full border border-gray p-1 text-xs text-gray transition-all duration-200 ease-in-out',
               isActiveRange && 'border-white text-white',
             )}
           >

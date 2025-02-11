@@ -9,6 +9,6 @@ body {
   @apply bg-ocean font-roboto font-regular text-gray;
 }
 
-.container {
+.wrapper {
   @apply mx-auto px-3;
 }
