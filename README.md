@@ -1,0 +1,1 @@
+# TradeBotMarket test task
