@@ -18,9 +18,10 @@ const TimeRange = ({
         const isActiveRange = activeRange === range;
         return (
           <button
+            key={range}
             onClick={() => onRangeChangeHandler(range)}
             className={cn(
-              'xs:w-full flex w-fit min-w-[50px] items-center justify-center rounded-full border border-gray p-1 text-xs text-gray transition-all duration-200 ease-in-out',
+              'flex w-fit min-w-[50px] items-center justify-center rounded-full border border-gray p-1 text-xs text-gray transition-all duration-200 ease-in-out xs:w-full',
               isActiveRange && 'border-white text-white',
             )}
           >

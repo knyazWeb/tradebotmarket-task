@@ -4,6 +4,7 @@ import {
   Navigation,
   navigationMockData,
   TimeRange,
+  TradingChart,
   TradingInfo,
 } from '@/components';
 import { AlignJustify, RefreshCw } from 'lucide-react';
@@ -35,6 +36,10 @@ const DashboardPage = () => {
       />
       {/* End Trading Info */}
 
+      {/* Trading Chart */}
+      <TradingChart />
+      {/* End Trading Chart */}
+
       {/* TODO: ВЫНЕСТИ ЛОГИКУ В КОМПОНЕНТ ОБËРТКУ */}
       {/* Time Range */}
       <TimeRange
@@ -49,6 +54,7 @@ const DashboardPage = () => {
       <Navigation className='fixed bottom-0 left-0 h-[60px]'>
         {navigationMockData.map((item) => (
           <Navigation.Item
+            key={item.itemName}
             itemName={item.itemName}
             iconRender={item.iconRender}
             isActive={item.isActive}

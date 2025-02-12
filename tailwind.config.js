@@ -8,6 +8,7 @@ export default {
         lightOcean: '#232C3E',
         gray: '#546076',
         orange: '#E4972D',
+        green: '#78A659',
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
@@ -18,7 +19,7 @@ export default {
         bold: '700',
       },
       screens: {
-        'xs': '340px', // Add custom screen breakpoint for 340px
+        xs: '340px', // Add custom screen breakpoint for 340px
       },
     },
   },
