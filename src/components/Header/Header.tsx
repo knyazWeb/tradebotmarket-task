@@ -5,7 +5,7 @@ const Header = ({ children, className, ...props }: IHeaderProps) => {
   return (
     <header
       {...props}
-      className={cn('flex items-center justify-between px-2 py-7', className)}
+      className={cn('flex items-center justify-between px-2 py-4', className)}
     >
       {children}
     </header>

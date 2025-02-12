@@ -9,6 +9,7 @@ export default {
         gray: '#546076',
         orange: '#E4972D',
         green: '#78A659',
+        pink: '#D2457B',
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
@@ -20,6 +21,9 @@ export default {
       },
       screens: {
         xs: '340px', // Add custom screen breakpoint for 340px
+      },
+      boxShadow: {
+        'inner-custom': 'inset 0 0px 20px 1px rgba(53, 162, 235, 0.3)',
       },
     },
   },

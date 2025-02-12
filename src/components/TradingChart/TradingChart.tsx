@@ -27,19 +27,18 @@ ChartJS.register(
   gradient,
 );
 
-const TradingChart = ({ className }: ITradingChartProps) => {
+const TradingChart = ({ activeBot, className }: ITradingChartProps) => {
   // States
   const chartRef = useRef(null);
   const [selectedValue, setSelectedValue] = useState<number | null>(null);
   const [isChartActive, setIsChartActive] = useState<boolean>(false);
   const isTouchDevice = useIsTouchDevice();
+  const [chartData, setChartData] = useState<typeof data>(data);
   // End States
 
   // Functions
   const onChartInteraction = useCallback(
     (_: unknown, chartElements: { index: number }[]) => {
-      console.log('here');
-
       if (!chartRef.current || chartElements.length === 0) {
         setSelectedValue(null);
         setIsChartActive(false);
@@ -79,6 +78,17 @@ const TradingChart = ({ className }: ITradingChartProps) => {
       document.removeEventListener('click', handleTouchOutside);
     };
   }, [isChartActive, handleTouchOutside]);
+
+  useEffect(() => {
+    const newData = {
+      ...data,
+      datasets: data.datasets.map((dataset) => ({
+        ...dataset,
+        data: dataset.data.map((value) => value + Math.random() * 10),
+      })),
+    };
+    setChartData(newData);
+  }, [activeBot]);
   // End Effects
 
   return (
@@ -91,12 +101,12 @@ const TradingChart = ({ className }: ITradingChartProps) => {
             onHover: !isTouchDevice ? onChartInteraction : null,
             onClick: isTouchDevice ? onChartInteraction : null,
           }}
-          data={data}
+          data={chartData}
           onMouseLeave={() => setSelectedValue(null)}
         />
         {/* Chart selected or hovered value */}
         {selectedValue && (
-          <div className='text-green pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-2xl font-sans font-light'>{`${selectedValue > 0 ? '+' : ''}${selectedValue}%`}</div>
+          <div className='text-green pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 font-sans text-2xl font-light'>{`${selectedValue > 0 ? '+' : ''}${selectedValue}%`}</div>
         )}
         {/* End Chart selected or hovered value */}
       </div>

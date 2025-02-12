@@ -6,7 +6,7 @@
 @import './components/tailwindBase.css';
 
 body {
-  @apply bg-ocean font-roboto font-regular text-gray;
+  @apply bg-ocean font-roboto font-regular text-gray overflow-hidden;
 }
 
 .wrapper {
