@@ -20,4 +20,6 @@ export default defineConfig({
     }),
     react(),
   ],
+
+  base: '/tradebotmarket-task',
 });
