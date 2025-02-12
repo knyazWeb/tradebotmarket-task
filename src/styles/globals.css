@@ -6,8 +6,9 @@
 @import './components/tailwindBase.css';
 
 body {
-  @apply bg-ocean font-roboto font-regular text-gray overflow-hidden;
+  @apply overflow-hidden bg-ocean font-roboto font-regular text-gray mx-auto w-full max-w-[500px];
 }
+
 
 .wrapper {
   @apply mx-auto px-3;

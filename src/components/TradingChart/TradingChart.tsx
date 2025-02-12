@@ -93,7 +93,7 @@ const TradingChart = ({ activeBot, className }: ITradingChartProps) => {
 
   return (
     <section className={cn('w-full overflow-hidden', className)}>
-      <div className='relative mx-auto w-[calc(100vw+100px)] translate-x-[-50px]'>
+      <div className='relative mx-auto w-[calc(100%+100px)] translate-x-[-50px]'>
         <Line
           ref={chartRef}
           options={{

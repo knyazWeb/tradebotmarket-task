@@ -9,7 +9,7 @@ import { AlignJustify, RefreshCw } from 'lucide-react';
 
 const DashboardPage = () => {
   return (
-    <main className='relative h-screen w-screen pb-[60px]'>
+    <main className='relative mx-auto h-screen w-screen max-w-[400px] pb-[60px]'>
       {/* Header */}
       <Header className='wrapper'>
         <Header.Item>
@@ -37,7 +37,7 @@ const DashboardPage = () => {
       {/* End Main Content */}
 
       {/* Navigation */}
-      <Navigation className='fixed bottom-0 left-0 h-[60px]'>
+      <Navigation className='fixed bottom-0 left-1/2 -translate-x-1/2 h-[60px] w-full max-w-[400px]'>
         {navigationMockData.map((item) => (
           <Navigation.Item
             key={item.itemName}
